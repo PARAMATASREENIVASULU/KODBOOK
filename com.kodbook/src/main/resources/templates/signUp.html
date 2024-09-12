@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		body {
+		    background-color: #181C14; /* Dark background */
+		    color: #ECDFCC; /* Light text color */
+		    font-family: Arial, sans-serif;
+		    
+		}
+		
+		h2 {
+		    color: #ECDFCC; /* Light text color for the header */
+		    text-align: center;
+		}
+		
+		div {
+		    background-color: #3C3D37; /* Darker form background */
+		    padding: 20px;
+		    border-radius: 10px;
+		    width: 300px;
+		    margin: 0 auto;
+		    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		}
+		
+		form {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		}
+		
+		label {
+		    color: #ECDFCC; /* Light text color for labels */
+		}
+		
+		input[type="text"], input[type="password"] {
+		    background-color: #697565; /* Input background */
+		    color: #ECDFCC; /* Input text color */
+		    border: 1px solid #3C3D37;
+		    border-radius: 5px;
+		    padding: 8px;
+		    margin-bottom: 10px;
+		    width: 100%;
+		}
+		
+		input[type="submit"] {
+		    background-color: #697565; /* Submit button background */
+		    color: #ECDFCC; /* Submit button text */
+		    border: none;
+		    border-radius: 5px;
+		    padding: 10px 20px;
+		    cursor: pointer;
+		    width: 100%;
+		}
+		
+		input[type="submit"]:hover {
+		    background-color: #3C3D37;
+		}
+		
+		a {
+		    color: #ECDFCC;
+		    text-decoration: none;
+		}
+		
+		a:hover {
+		    text-decoration: underline;
+		}
+		
+		hr {
+		    border: 1px solid #697565;
+		}
+	</style>
+</head>
+<body>
+	<h2>Create your account </h2>
+	
+	<div>
+	<form action="/signUp" method="post">
+			<lable>USERNAME : </lable>
+			<input type="text" name="username">
+			<br><br>
+			
+			<lable>EMAIL : </lable>
+			<input type="email" name="email">
+			<br><br>
+			
+			<lable>PASSWORD : </lable>
+			<input type="password" name="password">
+			<br><br>
+			
+			<lable>DOB : </lable>
+			<input type="date" name="dob">
+			<br><br>
+			
+			<lable>GENDER : </lable>
+			<lable>M</lable><input type="radio" name="gender" value="M">
+			<lable>F</lable><input type="radio" name="gender" value="F">
+			<lable>O</lable><input type="radio" name="gender" value="O">
+			<br><br>
+			<input type="submit" value="SIGN UP">
+		
+			<a href="/">Already have account? Login insted</a>
+		</form>
+	</div>
+</body>
+</html>
