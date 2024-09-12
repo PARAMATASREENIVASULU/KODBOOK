@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SIGNUP PAGE</title>
+	<style>
+	   body{
+		font-family: Arial, sans-serif;
+		background-color:#6A9C89;
+		color:16423C;
+		margin:0;
+		padding:0;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		height:100vh;
+		}
+	</style>
+</head>
+<body>
+	
+		<div class="form-group">
+			<form action="/signup" method="post">
+			<h2>Well come to signup page</h2>
+				<label>User Name:</label>
+				<input type="text" name="username" pattern="[a-zA-Z]{3,20}" required placeholder="username">
+				<br><br>
+				<label>Email:</label>
+				<input type="text" name="email" required
+				pattern="^[a-z/d]{3,10}@{1}[a-z]{7}.[a-z]{3}" placeholder="Enter you Email">
+				<br><br>
+				<label>Password:</label>
+				<input type="text" name="password" required
+				pattern="[a-zA-Z\d]{8,12}" placeholder="Enter you password">
+				<br><br>
+				<label>Conform Password:</label>
+				<input type="text" name="Password" required
+				pattern="[a-zA-Z\d]{8,12}" placeholder="Re-Enter you password">
+				<br><br>
+				<label required>Gender</label>
+				<INPUT TYPE="radio" name = "gender" value = "male">Male
+				<INPUT TYPE="radio" name = "gender" value = "female">Female
+				<INPUT TYPE="radio" name = "gender" value = "other">Other
+				<br><br>
+				<lable>Date Of Borth:</lable>
+				<input type="date" name="DOB" required>
+				<br><br>
+				<button type="submit">LOGIN</button>
+				<br><Br>
+				<button type="reset">Reset</button>
+			</form>
+		</div>
+</body>
+</html>

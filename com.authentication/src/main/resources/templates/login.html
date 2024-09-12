@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>LOGIN PAGE</title>
+	<style>
+      body{
+		font-family: Arial, sans-serif;
+		background-color:#6A9C89;
+		color:16423C;
+		margin:0;
+		padding:0;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		height:100vh;
+		}
+        
+	</style>
+</head>
+<body>
+	<div class="form-group">
+		<form action="/login" method="post">
+			<h2>Well come to login page</h2>
+			<br><br>
+			<label>USERNAME</label>
+			<input type="text" name="username" required 
+			pattern="[a-zA-Z]{3,20}" placeholder="username">
+			<br><br>
+			<label>PASSWORD</label>
+			<input type="text" name="password" required
+			pattern="[a-z A-Z 0-9]{8,12}"
+			 placeholder="passwords">
+			<br><br>
+			<button type="submit">LOGIN</button>
+			<br><br>
+			<a href="resetpassword">forgatenPassword?</a>
+		</form>
+	</div>
+</body>
+
+</html>
