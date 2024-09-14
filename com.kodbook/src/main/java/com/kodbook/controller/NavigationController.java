@@ -1,37 +1,42 @@
 
 package com.kodbook.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.kodbook.entities.Post;
+import com.kodbook.services.PostService;
 
 @Controller
 public class NavigationController {
 
+	@Autowired
+	PostService postService;
+	
 	@GetMapping("/")
-	public String index()
-	{
+	public String index() {
 		return "index";
 	}
 	
-	@GetMapping("/openSignup")
-	public String openSignup()
-	{
+	@GetMapping("/openSignUp")
+	public String openSignUp() {
 		return "signUp";
 	}
 	
-	@GetMapping("/openResetPassword")
-	public String openResetPassword()
-	{
-		return "resetPassword";
-	}
-	
-	@GetMapping("/createPost")
-	public String createPost()
-	{
+	@GetMapping("/openCreatePost")
+	public String openCreatePost() {
 		return "createPost";
 	}
 	
-	
-	
+	@GetMapping("/home")
+	public String login(Model model)	{
+			List<Post> allPosts = postService.fetchAllPosts();
+			model.addAttribute("allPosts", allPosts);
+			return "home";
+	}
 	
 }

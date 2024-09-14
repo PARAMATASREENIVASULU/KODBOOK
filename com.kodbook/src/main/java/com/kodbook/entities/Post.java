@@ -26,7 +26,7 @@ public class Post {
 	@Lob
 	@Basic(fetch=FetchType.LAZY)
 	@Column(columnDefinition="LONGBLOB")
-	byte[]photo;
+	private byte[]photo;
 
 	public String getPhotoBase64() {
         if (photo == null) {

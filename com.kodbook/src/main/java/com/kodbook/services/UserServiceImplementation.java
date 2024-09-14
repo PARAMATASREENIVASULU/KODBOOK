@@ -58,7 +58,7 @@ public class UserServiceImplementation
 
 	@Override
 	public void setpassword(String Username, String password) {
-		// TODO Auto-generated method stub
+		repo.findByUsername(Username).addPassword(password);
 		
 	}
 

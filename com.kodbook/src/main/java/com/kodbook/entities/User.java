@@ -85,6 +85,11 @@ public class User {
 		return "User [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password + ", dob="
 				+ dob + ", gender=" + gender + "]";
 	}
+
+	public void addPassword(String password2) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

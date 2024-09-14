@@ -1,0 +1,136 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5EDED; /* Updated background color */
+    color: #6482AD; /* Updated text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #7FA1C3; /* Updated highlight color */
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: #E2DAD6; /* Updated secondary highlight color */
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+
+nav a:hover {
+    background-color: #6482AD; /* Updated hover effect */
+    color: #fff;
+}
+
+/* Post card */
+.profile-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.profile-details span {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-details img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.profile-details p {
+    color: #6482AD; /* Updated text color */
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Like and Comment form */
+form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements */
+}
+
+input[type="submit"] {
+    background-color: #7FA1C3; /* Updated background color */
+    color: #FFFFFF; /* White text for contrast */
+    padding: 8px 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #6482AD; /* Updated hover effect */
+    color: #E2DAD6;
+    opacity: 0.8;
+}
+
+/* Comment form styling */
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements */
+}
+
+.comment-form textarea {
+    width: 100%;
+    max-width: 600px; /* Set a max-width for better centering */
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #7FA1C3; /* Updated border color */
+    border-radius: 10px;
+    font-size: 1em;
+    resize: none;
+}
+
+/* Comments section */
+.comments-section {
+    text-align: center; /* Center comments */
+    margin-top: 15px;
+}
+
+/* Center the headings */
+.comments-section h4,
+h1, h2, h3, h4, h5, h6 {
+    color: #7FA1C3; /* Updated header color */
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-align: center; /* Center the headings */
+}
+
+.comments-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.comments-section ul li {
+    background-color: #E2DAD6; /* Updated secondary highlight color */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #6482AD; /* Updated text color */
+}
