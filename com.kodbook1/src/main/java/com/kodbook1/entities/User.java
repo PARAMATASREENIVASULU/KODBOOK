@@ -1,4 +1,4 @@
-package com.kodbook.entities;
+package com.kodbook1.entities;
 
 import java.util.Arrays;
 import java.util.Base64;
@@ -18,7 +18,7 @@ import jakarta.persistence.OneToMany;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String username;
 	private String email;
@@ -31,19 +31,18 @@ public class User {
 	private String linkedIn;
 	private String gitHub;
 	@OneToMany
-	private List<Post> post;
+	private List<Post> posts; 
 	
-
 	@Lob
-	@Basic(fetch=FetchType.LAZY)
-	@Column(columnDefinition="LONGBLOB")
-	private byte[]photo;
+	@Basic(fetch = FetchType.LAZY)
+	@Column(columnDefinition = "LONGBLOB")
+	private byte[] profilePic;
 
 	public String getPhotoBase64() {
-        if (photo == null) {
+        if (profilePic == null) {
             return null;
         }
-        return Base64.getEncoder().encodeToString(photo);
+        return Base64.getEncoder().encodeToString(profilePic);
     }
 
 	public User() {
@@ -52,7 +51,7 @@ public class User {
 	}
 
 	public User(Long id, String username, String email, String password, String dob, String gender, String city,
-			String bio, String college, String linkedIn, String gitHub, List<Post> post, byte[] photo) {
+			String bio, String college, String linkedIn, String gitHub, List<Post> posts, byte[] profilePic) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -65,8 +64,8 @@ public class User {
 		this.college = college;
 		this.linkedIn = linkedIn;
 		this.gitHub = gitHub;
-		this.post = post;
-		this.photo = photo;
+		this.posts = posts;
+		this.profilePic = profilePic;
 	}
 
 	public Long getId() {
@@ -157,28 +156,28 @@ public class User {
 		this.gitHub = gitHub;
 	}
 
-	public List<Post> getPost() {
-		return post;
+	public List<Post> getPosts() {
+		return posts;
 	}
 
-	public void setPost(List<Post> post) {
-		this.post = post;
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 
-	public byte[] getPhoto() {
-		return photo;
+	public byte[] getProfilePic() {
+		return profilePic;
 	}
 
-	public void setPhoto(byte[] photo) {
-		this.photo = photo;
+	public void setProfilePic(byte[] profilePic) {
+		this.profilePic = profilePic;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password + ", dob="
 				+ dob + ", gender=" + gender + ", city=" + city + ", bio=" + bio + ", college=" + college
-				+ ", linkedIn=" + linkedIn + ", gitHub=" + gitHub + ", post=" + post + ", photo="
-				+ Arrays.toString(photo) + "]";
+				+ ", linkedIn=" + linkedIn + ", gitHub=" + gitHub + ", posts=" + posts + ", profilePic="
+				+ Arrays.toString(profilePic) + "]";
 	}
 	
 }

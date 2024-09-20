@@ -1,0 +1,107 @@
+body {
+    background-color: #6482AD;
+    font-family: Arial, sans-serif;
+    color: #F5EDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Form container */
+.form-container {
+    background-color: #7FA1C3;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Shadow for form */
+    text-align: left;
+}
+
+/* Form fields */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    background-color: #E2DAD6; /* Input background */
+    border: 1px solid #7FA1C3;
+    border-radius: 5px;
+    padding: 10px 5px 5px 3px; /* Padding for the input */
+    font-size: 14px;
+    color: #6482AD; /* Input text color */
+    width: 100%;
+    outline: none;
+}
+
+/* Label styling */
+input[type="text"]:focus + label, input[type="password"]:focus + label,
+input[type="text"]:not(:placeholder-shown) + label, input[type="password"]:not(:placeholder-shown) + label {
+    top: -12px;
+    left: 10px;
+    font-size: 12px;
+    color: #F5EDED; /* Color for label when focused or filled */
+}
+
+/* Label positioning */
+label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    color: #6482AD;
+    font-size: 16px;
+    transition: 0.3s ease all; /* Smooth transition for the floating effect */
+    pointer-events: none; /* Prevent clicking on the label */
+}
+
+/* Icon positioning */
+.input-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6482AD;
+}
+
+/* Submit button */
+input[type="submit"] {
+    background-color: #E2DAD6; /* Button background */
+    color: #6482AD; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #6482AD;
+    color: #F5EDED;
+}
+
+/* Link */
+a {
+    margin-top: 15px;
+    text-align: center;
+    color: #F5EDED;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    color: #F5EDED;
+    margin-bottom: 20px;
+}

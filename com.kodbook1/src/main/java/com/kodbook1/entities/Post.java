@@ -1,4 +1,4 @@
-package com.kodbook.entities;
+package com.kodbook1.entities;
 
 import java.util.Arrays;
 import java.util.Base64;
@@ -16,21 +16,19 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Post {
-
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String caption;
 	private int likes;
-	private List<String>comments;
-	
+	private List<String> comments;
 	@ManyToOne
 	private User user;
-	
 	@Lob
-	@Basic(fetch=FetchType.LAZY)
-	@Column(columnDefinition="LONGBLOB")
-	private byte[]photo;
+	@Basic(fetch = FetchType.LAZY)
+	@Column(columnDefinition = "LONGBLOB")
+	private byte[] photo;
 
 	public String getPhotoBase64() {
         if (photo == null) {
@@ -44,12 +42,13 @@ public class Post {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Post(Long id, String caption, int likes, List<String> comments, byte[] photo) {
+	public Post(Long id, String caption, int likes, List<String> comments, User user, byte[] photo) {
 		super();
 		this.id = id;
 		this.caption = caption;
 		this.likes = likes;
 		this.comments = comments;
+		this.user = user;
 		this.photo = photo;
 	}
 
@@ -85,6 +84,14 @@ public class Post {
 		this.comments = comments;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public byte[] getPhoto() {
 		return photo;
 	}
@@ -95,9 +102,8 @@ public class Post {
 
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", caption=" + caption + ", likes=" + likes + ", comments=" + comments + ", photo="
-				+ Arrays.toString(photo) + "]";
+		return "Post [id=" + id + ", caption=" + caption + ", likes=" + likes + ", comments=" + comments + ", user="
+				+ user + ", photo=" + Arrays.toString(photo) + "]";
 	}
-	
 	
 }

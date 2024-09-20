@@ -12,7 +12,7 @@ public class UserServiceImplementation
 	@Autowired
 	UserRepository repo;
 	
-	public boolean userExists1(String username, String email) {
+	public boolean userExists(String username, String email) {
 		User user1 = repo.findByUsername(username);
 		User user2 = repo.findByEmail(email);
 		if(user1!=null||user2!=null)
@@ -23,16 +23,11 @@ public class UserServiceImplementation
 		return false;
 		}
 	}
-
-
+	
 	public void addUser(User user) {
 		repo.save(user);
 	}
-
-
 	
-
-
 	@Override
 	public boolean validateUser(String username, String password) {
 		String dbpass = repo.findByUsername(username).getPassword();
@@ -43,24 +38,22 @@ public class UserServiceImplementation
 			return false;
 		}
 	}
-
+/*
+	@Override
+	public void updatepassword(String password) {
+		repo.updatePassword(password);
+	}
 
 	@Override
 	public boolean resetPassword(String username, String password) {
-		String dbpass=repo.findByUsername(username).getPassword();
-		if(password.equals(dbpass)) {
+		String dbpass = repo.findByUsername(username).getPassword();
+		if(password.equals(dbpass))
+		{
 			return true;
+		}else {
+			return false;
 		}
 		
-		return false;
 	}
-
-
-	@Override
-	public void setpassword(String Username, String password) {
-		repo.findByUsername(Username).addPassword(password);
-		
-	}
-
-	
+	*/
 }

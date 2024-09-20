@@ -10,9 +10,15 @@ public interface UserRepository
 	User findByUsername(String username);
 
 	User findByEmail(String email);
-
+/*
 	User findByPassword(String password);
 
-	
+	boolean updatePassword(String password);
+
+	User getusername();
+
+	void updateuser(User user);
+
+	*/
 
 }

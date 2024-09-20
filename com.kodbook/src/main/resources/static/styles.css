@@ -1,92 +1,82 @@
 body {
-    font-family: 'Poppins', sans-serif;  /* Funky but classy font */
-    background-color: #F5EDED;           /* Light, calming background */
-    color: #6482AD;                      /* Text color */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #6482AD; /* Dark background */
+    color: #F5EDED; /* Light text color */
+    font-family: Arial, sans-serif;
 }
 
-h1 {
-    color: #6482AD;  /* Muted blue for the headings */
-    font-size: 3em;
-    text-align: center;
-    margin-bottom: 0.2em;
-}
-
-h3 {
-    color: #7FA1C3;  /* Soft sky blue for subheadings */
-    font-size: 1.5em;
+h2 {
+    color: #F5EDED; /* Light text color for the header */
     text-align: center;
 }
 
-hr {
-    border: 0;
-    height: 2px;
-    background-color: #E2DAD6;  /* Light beige for divider */
-    margin: 20px 0;
+div {
+    background-color: #7FA1C3; /* Darker form background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Form styling */
 form {
-    background-color: white;
-    border-radius: 15px;
-    padding: 40px;
-    width: 400px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Input fields */
-input[type="text"], input[type="password"], input[type="email"], input[type="date"] {
+.input-container {
+    position: relative;
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #6482AD; /* Updated input border color */
+    margin-bottom: 20px;
+}
+
+.input-container i {
+    position: absolute;
+    right: 10px; /* Align icon to the right */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #E2DAD6; /* Icon color */
+}
+
+input[type="text"], input[type="password"] {
+    background-color: #E2DAD6; /* Input background */
+    color: #6482AD; /* Input text color */
+    border: 1px solid #7FA1C3;
     border-radius: 5px;
-    font-size: 1.1em;
+    padding: 8px 40px 8px 10px; /* Adjust padding to fit the icon on the right */
+    width: 100%;
+    font-size: 14px;
 }
 
-/* Radio buttons */
-label {
-    font-size: 1.1em;
-    color: #2A2A2A;
+input::placeholder {
+    color: #6482AD; /* Placeholder text color */
 }
 
-input[type="radio"] {
-    margin: 0 10px;
-    accent-color: #7FA1C3;  /* Updated radio button color */
-}
-
-/* Submit button */
 input[type="submit"] {
-    background-color: #7FA1C3;  /* Updated submit button color */
-    color: white;
-    padding: 12px 20px;
+    background-color: #E2DAD6; /* Submit button background */
+    color: #6482AD; /* Submit button text */
     border: none;
-    border-radius: 25px;
-    font-size: 1.2em;
+    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    width: 100%;
 }
 
 input[type="submit"]:hover {
-    background-color: #6482AD;  /* Muted blue for hover effect */
-    opacity: 0.8;
+    background-color: #6482AD;
+    color: #F5EDED;
 }
 
-/* Links */
 a {
-    display: inline-block;
-    margin-top: 15px;
+    color: #F5EDED;
     text-decoration: none;
-    color: #6482AD;  /* Updated link color */
-    font-size: 1em;
+    font-size: 14px;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+hr {
+    border: 1px solid #E2DAD6;
 }

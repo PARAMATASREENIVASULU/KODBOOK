@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>New Posts</title>
+</head>
+<body>
+	<hr>
+		<form>
+			<p><strong>Photo:</strong></p>
+	        <img th:if="${post.photoBase64}" 
+	        th:src="'data:image/jpeg;base64,' + ${post.photoBase64}" 
+	        alt="post Photo" />
+	        
+	        <p><strong>Caption:</strong>
+	        <span th:text="${post.caption}"></span></p>
+	        
+	        <p><strong>Likes:</strong>
+	        <span th:text="${post.Likes}"></span></p>
+	        <a href="/likePost">Like</a>
+	        
+		</form>
+</body>
+</html>

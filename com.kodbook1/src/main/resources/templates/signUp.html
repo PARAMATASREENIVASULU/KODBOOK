@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="StylesignUp.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Create your account</h2>
+        <form action="/signUp" method="post">
+            <label for="username">USERNAME: </label>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+            
+            <label for="email">EMAIL: </label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            
+            <label for="password">PASSWORD: </label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+            
+            <label for="dob">DOB: </label>
+            <input type="date" id="dob" name="dob">
+            
+            <label for="gender">GENDER: </label>
+            <div class="radio-group">
+                <label for="male"><input type="radio" id="male" name="gender" value="M"> M</label>
+                <label for="female"><input type="radio" id="female" name="gender" value="F"> F</label>
+                <label for="other"><input type="radio" id="other" name="gender" value="O"> O</label>
+            </div>
+            
+            <input type="submit" value="SIGN UP">
+            
+            <a href="/">Already have an account? Login instead</a>
+        </form>
+    </div>
+</body>
+</html>

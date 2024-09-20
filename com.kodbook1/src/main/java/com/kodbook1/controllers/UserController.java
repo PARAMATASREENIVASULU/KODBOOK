@@ -1,5 +1,6 @@
-package com.kodbook.controller;
+package com.kodbook1.controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +11,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kodbook.entities.Post;
-import com.kodbook.entities.User;
-import com.kodbook.services.PostService;
-import com.kodbook.services.UserService;
+import com.kodbook1.entities.Post;
+import com.kodbook1.entities.User;
+import com.kodbook1.service.PostService;
+import com.kodbook1.service.UserService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class UserController {
-
 	@Autowired
 	UserService service;
 	@Autowired
@@ -37,34 +39,51 @@ public class UserController {
 	@PostMapping("/login")
 	public String login(@RequestParam String username,
 			@RequestParam String password,
-			Model model)	{
+			Model model, HttpSession session)	{
 		boolean status = service.validateUser(username, password);
 		if(status == true) {
 			List<Post> allPosts = postService.fetchAllPosts();
+			
+			session.setAttribute("username", username);
+			model.addAttribute("session", session);
+			
 			model.addAttribute("allPosts", allPosts);
+			
 			return "home";
 		}
 		else {
 			return "index";
 		}
-	}/*
-	@PostMapping("resetPassword")
-	public String resetPassword(@RequestParam String username, @RequestParam String password){
-		
-		boolean status = service.resetPassword(username, password);
-		if(status == true)
-		{
-			service.updatepassword(password);
-		}
-		return "index";
-	}*/
- 	
-	@PostMapping("/updateProfile")
-	public String updateProfile(@RequestParam String dob, @RequestParam String gender,
-			@RequestParam String city, @RequestParam String bio, @RequestParam String college,
-			@RequestParam String linkedIn, @RequestParam String gitHub, @RequestParam MultipartFile profilePic) {
-		System.out.println(dob+""+bio);
-		return "profile";
 	}
 	
+	@PostMapping("/updateProfile")
+	public String updateProfile(@RequestParam String dob, @RequestParam String gender,
+			@RequestParam String city, @RequestParam String bio,
+			@RequestParam String college, @RequestParam String linkedIn,
+			@RequestParam String gitHub, @RequestParam MultipartFile profilePic
+			, HttpSession session,
+			Model model) {
+		
+		String username = (String) session.getAttribute("username");
+		
+		//fetch user object using username
+		User user = service.getUser(username);
+		//update and save object
+		user.setDob(dob);
+		user.setGender(gender);
+		user.setCity(city);
+		user.setBio(bio);
+		user.setCollege(college);
+		user.setLinkedIn(linkedIn);
+		user.setGitHub(gitHub);
+		try {						
+			user.setProfilePic(profilePic.getBytes());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		service.updateUser(user);
+		model.addAttribute("user", user);
+		return "myProfile";
+	}
 }

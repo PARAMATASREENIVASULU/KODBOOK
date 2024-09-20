@@ -16,27 +16,38 @@ public class NavigationController {
 
 	@Autowired
 	PostService postService;
-	
 	@GetMapping("/")
 	public String index() {
 		return "index";
 	}
-	
 	@GetMapping("/openSignUp")
 	public String openSignUp() {
 		return "signUp";
 	}
-	
 	@GetMapping("/openCreatePost")
 	public String openCreatePost() {
 		return "createPost";
 	}
-	
+	/*
+	@GetMapping("openResetPassword")
+	public String openResetPassword() {
+		return "resetPassword";
+	}
+	*/
 	@GetMapping("/home")
 	public String login(Model model)	{
 			List<Post> allPosts = postService.fetchAllPosts();
 			model.addAttribute("allPosts", allPosts);
 			return "home";
+	}
+	@GetMapping("/openProfile")
+	public String openProfile() {
+		return "profile";
+	}
+	
+	@GetMapping("/openEditProfile")
+	public String openEditProfile() {
+		return "editProfile";
 	}
 	
 }
